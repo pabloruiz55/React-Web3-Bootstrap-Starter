@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
 
+import EthBalanceDisplay from './EthBalanceDisplay'
+
+
 import {
   Collapse,
   Navbar,
@@ -68,7 +71,7 @@ class NavBar extends Component {
           <Collapse isOpen={this.state.isOpen} navbar>
             <Nav className="ml-auto" navbar>
               <NavItem>
-                <NavLink href=""><em>{this.state.myBalance} ETH</em></NavLink>
+                <NavLink><Link href="" to="/wallet"><EthBalanceDisplay web3={this.state.web3} web3WH={this.state.web3WH} /></Link></NavLink>
               </NavItem>
               <NavItem>
                 <NavLink><Link href="" to="/">Home</Link></NavLink>

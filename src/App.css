@@ -1,3 +1,7 @@
+body{
+  background-color: #f7f7f7;
+}
+
 .App {
   text-align: center;
 }
@@ -25,4 +29,12 @@
 @keyframes App-logo-spin {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
+}
+
+.Wallet{
+  margin-top: 4em;
+}
+
+.Wallet-body {
+  background-color: #fafafa;
 }

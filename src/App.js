@@ -11,6 +11,7 @@ import {
 
 import Pablo from './components/Pablo'
 import NavBar from './components/NavBar'
+import Wallet from './components/Wallet'
 
 const About = () => (
 <div>
@@ -50,6 +51,7 @@ class App extends Component {
 
             <Route exact path='/' render={(props) => <Pablo web3={this.state.web3} web3WH={this.state.web3WH} />}/>
             <Route path="/about" component={About}/>
+            <Route path="/wallet" render={(props) => <Wallet web3={this.state.web3} web3WH={this.state.web3WH} />}/>
           </div>
         </Router>
       </div>
