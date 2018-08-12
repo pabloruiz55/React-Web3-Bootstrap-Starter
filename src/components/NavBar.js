@@ -28,11 +28,10 @@ class NavBar extends Component {
   constructor(props) {
     super(props);
 
-    this.state = {
-      web3: props.web3,
-      web3WH: props.web3WH,
-      myBalance:0
-    };
+      this.state = {
+        web3: props.web3,
+        web3WH: props.web3WH
+      };
     }
 
     async componentDidMount(){
