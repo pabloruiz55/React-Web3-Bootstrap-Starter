@@ -11,7 +11,7 @@ class Pablo extends Component {
     this.handleClick = this.handleClick.bind(this);
     this.handleChange = this.handleChange.bind(this);
 
-
+    //const pabloAddress = JSON.parse(require('fs').readFileSync('./build/contracts/Pablo.json').toString()).networks[15].address;
     const PabloABI = [
       {
         "constant": true,
@@ -60,8 +60,8 @@ class Pablo extends Component {
         "type": "function"
       }
     ];
-    const pabloC = new props.web3.eth.Contract(PabloABI,"0x28ced10da7b3392b7efbb0befafb08b635e05324");
-    const pabloC_event = new props.web3WH.eth.Contract(PabloABI,"0x28ced10da7b3392b7efbb0befafb08b635e05324");
+    const pabloC = new props.web3.eth.Contract(PabloABI,"0x0ee546a1e0c5b0d54ac5b22338a3a3d0499a1f29");
+    const pabloC_event = new props.web3WH.eth.Contract(PabloABI,"0x0ee546a1e0c5b0d54ac5b22338a3a3d0499a1f29");
     pabloC_event.setProvider(props.web3WH.currentProvider);
 
 
@@ -91,6 +91,7 @@ class Pablo extends Component {
       .on('data', event => {
           //console.log("QQQ",event.returnValues._message);
           this.state.pabloC.methods.myData().call().then( result => {
+            console.log("PAPA",result);
             this.setState({myValue:result});
           });
       });

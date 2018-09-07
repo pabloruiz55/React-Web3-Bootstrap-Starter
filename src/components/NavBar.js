@@ -42,30 +42,13 @@ class NavBar extends Component {
         this.setState({accounts:accounts});
       })
 
-      this.timerID = setInterval(
-        () => this.getEthBalance(),
-        1000
-      );
-
     }
-
-    getEthBalance(){
-      this.state.web3.eth.getBalance(this.state.accounts[0])
-      .then(bal => {
-        this.setState({myBalance:this.state.web3.utils.fromWei(bal,"Ether")});
-      });
-    }
-
-    componentWillUnmount() {
-      clearInterval(this.timerID);
-    }
-
 
     render() {
       return (
         <div>
         <Navbar color="light" light expand="md">
-          <NavbarBrand href="/">reactstrap</NavbarBrand>
+          <NavbarBrand href="/">Pablo's React Web3 Boilerplate</NavbarBrand>
           <NavbarToggler onClick={this.toggle} />
           <Collapse isOpen={this.state.isOpen} navbar>
             <Nav className="ml-auto" navbar>
